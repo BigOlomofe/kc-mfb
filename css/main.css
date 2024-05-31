@@ -88,10 +88,17 @@
       object-fit: contain;
     }
 
-.navbar-toggler-icon {
-  
+.nav-link {
+  color: #000000;
 }
 
+.nav-link:hover {
+  color: #9a2530;
+}
+
+.nav-item:focus {
+  color: #fff;
+}
 
 
   .carousel-item img {
