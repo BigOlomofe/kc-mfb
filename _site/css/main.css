@@ -81,7 +81,6 @@
 }
 
 .navbar-brand .logo {
-  width: 137px;
   height: 35px;
   object-fit: contain;
 }
@@ -129,4 +128,9 @@
   height: 2.5rem;
   line-height: 2.5rem;
   width: 2.5rem;
+}
+
+.logo {
+  height: 35px;
+  object-fit: scale-down;
 }
