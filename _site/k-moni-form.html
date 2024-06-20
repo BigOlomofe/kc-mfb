@@ -11,6 +11,10 @@
   <link rel="manifest" href="img/site.webmanifest">
   <title>KC Microfinance Bank · Your Money, Your Way</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/form.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet">    
   <!-- Custom styles for this template --> 
   <link href="css/carousel.css" rel="stylesheet">
@@ -155,13 +159,57 @@
     </div>
 
     <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-center align-items-center mb-3">
+          <span class="text-danger">Upload Photograph</span> 
+        </h4>
+        <div>
+            <div class="mb-4 d-flex justify-content-center">
+                <img id="selectedImage" src="img/placeholder.jpg"
+                alt="example placeholder" style="width: 300px;" class="shadow" />
+            </div>
+            <div class="d-flex justify-content-center">
+                <div data-mdb-ripple-init class="btn btn-danger btn-rounded">
+                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                    <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                </div>
+            </div>
+        </div>
+
+        
+      </div>
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
+        <h4 class="mb-3">Loan Application/Agreement</h4>
         <form class="needs-validation" novalidate>
           <div class="row g-3">
+            <h5 class="mb-0 pb-0">Select Loan Type</h5>
+
+            <div class=" col-sm-6">
+              <div class="form-check">
+                <input id="newLoan" name="loanType" type="radio" class="form-check-input" checked required>
+                <label class="form-check-label" for="newLoan">New Loan</label>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-check">
+                <input id="topUpLoan" name="loanType" type="radio" class="form-check-input" required>
+                <label class="form-check-label" for="topUpLoan">Top-up Loan</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+                        <label for="bvn">Enter your BVN (11 digits):</label>
+                        <input type="text" class="form-control" id="bvn" name="bvn" pattern="\d{11}" maxlength="11" required>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter exactly 11 digits.</div>
+              </div>
+
+              <h5 class="mb-0 pb-0 pt-3">Personal Information</h5>
+
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -169,9 +217,17 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" value="" required>
               <div class="invalid-feedback">
                 Valid last name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="organization" class="form-label">Organization</label>
+              <input type="text" class="form-control" id="organization" placeholder="Enter Organization Name" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
               </div>
             </div>
 
